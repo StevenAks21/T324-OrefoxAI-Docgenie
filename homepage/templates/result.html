@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'homepage/result.css' %}">
+</head>
+<body>
+
+    <header>Analysis Result</header>
+
+    <main>
+        <div class="container">
+            <div class="output-box">
+                {{ output }}
+            </div>
+
+            <a href="{% url 'upload_file' %}" class="button">Upload Another File</a>
+        </div>
+    </main>
+
+    <footer>© 2025 DocGenie</footer>
+
+</body>
+</html>

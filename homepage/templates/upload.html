@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'homepage/upload.css' %}">
+    <script>
+        function updateFileName() {
+            const input = document.getElementById('file-upload');
+            const label = document.getElementById('file-name');
+            if (input.files.length > 0) {
+                label.textContent = input.files[0].name;
+                label.classList.add('show');
+            } else {
+                label.textContent = "";
+                label.classList.remove('show');
+            }
+        }
+    </script>
+    
+</head>
+<body>
+
+    <header>Upload Your File</header>
+
+    <main>
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <label for="file-upload" class="custom-file-upload">
+                    Choose File
+                </label>
+                <input id="file-upload" type="file" name="file" onchange="updateFileName()" />
+
+                <!-- Dynamic file name -->
+                <div id="file-name" class="file-name-display"></div>
+
+                <input type="submit" value="Analyze">
+            </form>
+        </div>
+    </main>
+
+    <footer>© 2025 DocGenie</footer>
+
+</body>
+</html>

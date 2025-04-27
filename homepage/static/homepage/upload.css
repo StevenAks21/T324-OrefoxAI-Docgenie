@@ -1,0 +1,129 @@
+/* upload.css */
+
+body {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: #ffffff;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    padding: 30px 0 10px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    background: transparent;
+    color: #ffffff;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 60px 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.4s;
+    backdrop-filter: blur(12px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 16px 24px;
+    margin-bottom: 30px; /* <-- Adds good space below the button */
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 80%; /* makes button nicely centered */
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: translateY(-3px);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="submit"] {
+    font-size: 18px;
+    padding: 16px 24px;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    background: #000000;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%; /* same width as choose file */
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #777;
+    background: transparent;
+}
+
+.file-name-display {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#file-name.show {
+    opacity: 1;
+    transform: translateY(5px);
+    text-decoration: none;
+}
